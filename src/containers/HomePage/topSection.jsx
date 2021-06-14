@@ -5,12 +5,12 @@ import { BrandLogo } from "../../components/brandLogo";
 import { Button } from "../../components/button";
 import { Marginer } from "../../components/marginer";
 import { deviceSize } from "../../components/responsive";
-
 import MedicalTeam from "../../images/medicalteam.jpg";
 import Brainnetwork2 from "../../images/brainnetwork2.jpg";
 
 const TopSectionContainer = styled.div`
   width: 100%;
+  align-self: left;
   height: 100%;
   background: url(${MedicalTeam}) no-repeat;
   background-position: -50px -50px;

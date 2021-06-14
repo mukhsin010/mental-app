@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { AccountBox } from "../../components/accountBox";
 import { Footer } from "../../components/footer";
-import { Navbar } from "../../components/navbar";
+import Navbar from "../../components/navbar";
 import {
   InnerPageContainer,
   PageContainer,

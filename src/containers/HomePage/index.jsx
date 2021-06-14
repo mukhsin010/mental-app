@@ -1,8 +1,8 @@
-import React from "react";
+import React, { Component, useState } from "react";
 import styled from "styled-components";
 import { Footer } from "../../components/footer";
 import { Marginer } from "../../components/marginer";
-import { Navbar } from "../../components/navbar";
+import Navbar from "../../components/navbar";
 import {
   InnerPageContainer,
   PageContainer,
@@ -25,7 +25,8 @@ const ContentContainer = styled.div`
   }
 `;
 
-export function HomePage(props) {
+const HomePage = () => {
+  
   return (
     <PageContainer>
       <TopSection>
@@ -44,3 +45,5 @@ export function HomePage(props) {
     </PageContainer>
   );
 }
+
+export default HomePage;

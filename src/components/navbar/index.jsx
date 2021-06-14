@@ -3,10 +3,11 @@ import styled from "styled-components";
 import { BrandLogo } from "../brandLogo";
 import { Button } from "../button";
 import { Marginer } from "../marginer";
-
 import { Link } from "react-router-dom";
 import { deviceSize } from "../responsive";
 import { useMediaQuery } from "react-responsive";
+import special from "../specialist/Specialist";
+
 
 const NavbarContainer = styled.div`
   width: 100%;
@@ -45,27 +46,30 @@ const Seperator = styled.div`
   background-color: #fff;
 `;
 
-export function Navbar(props) {
+const Navbar = (props, { sidebarOpen, openSidebar, }) => {
   const { useTransparent } = props;
 
   const isMobile = useMediaQuery({ maxWidth: deviceSize.mobile });
-
+  const openSpecialist = special
   return (
-    <NavbarContainer useTransparent={useTransparent}>
-      <BrandLogo />
-      <AccessibilityContainer>
-        {!isMobile && <AnchorLink>Specialists Portal</AnchorLink>}
-        {!isMobile && <Marginer direction="horizontal" margin={10} />}
-        {!isMobile && <Seperator />}
-        <Marginer direction="horizontal" margin={5}/>
-        <Link to="/customer/access/signup">
-          <Button size={11}>Register</Button>
-        </Link>
-        <Marginer direction="horizontal" margin={5} />
-        <Link to="/customer/access/signin">
-          <Button size={11}>Login</Button>
-        </Link>
-      </AccessibilityContainer>
-    </NavbarContainer>
-  );
+    <div>
+      <NavbarContainer useTransparent={useTransparent}>
+        <BrandLogo />
+        <AccessibilityContainer>
+          {!isMobile && <AnchorLink>Specialists Portal</AnchorLink>}
+          {!isMobile && <Marginer direction="horizontal" margin={10} />}
+          {!isMobile && <Seperator />}
+          <Marginer direction="horizontal" margin={5}/>
+          <Link to="/customer/access/signup">
+            <Button size={11}>Register</Button>
+          </Link>
+          <Marginer direction="horizontal" margin={5} />
+          <Link to="/customer/access/signin">
+            <Button size={11}>Login</Button>
+          </Link>
+        </AccessibilityContainer>
+      </NavbarContainer>
+    </div>);
 }
+
+export default Navbar;
